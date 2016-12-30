@@ -8,7 +8,7 @@ install_plugins() {
     for p in $(echo $PLUGINS | awk -v RS=, '{print}')
     do
       echo "Installing the plugin $p"
-      $KIBANA_HOME/bin/kibana-plugin install $p --batch
+      $KIBANA_HOME/bin/kibana-plugin install $p
     done
   else
     mkdir -p $KIBANA_HOME/plugins
