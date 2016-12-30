@@ -15,8 +15,23 @@ install_plugins() {
   fi
 }
 
+fix_kibana_version() {
+    rm -f $KIBANA_HOME/plugins/c3_charts/package.json
+    echo "{
+	\"name\": \"k5p-c3\",
+	\"version\": \"5.1.1\",
+	\"authors\": [
+  		\"Momchil Stoyanov Momchilov <mom4il13@hotmail.com>\"
+  	],
+  	\"dependencies\" : {
+    	\"c3\": \"0.4.11\"
+  	}
+    }" >> $KIBANA_HOME/plugins/c3_charts/package.json
+
+}
 
 install_plugins
+fix_kibana_version
 
 if [ -n "$ES_ENCRYPTION_KEY" ]; then
     echo "xpack.security.enabled: \"true\"" >> $KIBANA_HOME/conf/kibana.yml
