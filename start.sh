@@ -43,6 +43,16 @@ if [ -n "$ES_URL" ]; then
     echo "elasticsearch.url: \"$ES_URL\"" >> $KIBANA_HOME/conf/kibana.yml
 fi
 
+if [ -n "$ES_USERNAME" ]; then
+   echo "elasticsearch.username: \"$ES_USERNAME\"" >> $KIBANA_HOME/conf/kibana.yml
+fi
+
+if [ -n "$ES_PASSWORD" ]; then
+   echo "elasticsearch.password: \"$ES_PASSWORD\"" >> $KIBANA_HOME/conf/kibana.yml
+fi
+
+
+
 echo "kibana.index: \".kibana\"" >> $KIBANA_HOME/conf/kibana.yml
 echo "kibana.defaultAppId: \"discover\"" >> $KIBANA_HOME/conf/kibana.yml
 
