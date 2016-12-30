@@ -19,7 +19,7 @@ fix_kibana_version() {
     rm -f $KIBANA_HOME/plugins/c3_charts/package.json
     echo "{
 	\"name\": \"k5p-c3\",
-	\"version\": \"5.1.1\",
+	\"version\": \"$KIBANA_VERSION\",
 	\"authors\": [
   		\"Momchil Stoyanov Momchilov <mom4il13@hotmail.com>\"
   	],
@@ -27,6 +27,18 @@ fix_kibana_version() {
     	\"c3\": \"0.4.11\"
   	}
     }" >> $KIBANA_HOME/plugins/c3_charts/package.json
+
+    rm -f $KIBANA_HOME/plugins/extended_metric/package.json
+    echo "{
+      \"name\": \"extended_metric_vis\",
+      \"version\": \"0.1.0\",
+      \"main\": \"index.js\",
+      \"kibana\": {
+        "version": \"$KIBANA_VERSION\"
+      },
+      \"author\": \"Olaf Horstmann <oh@omm-solutions.de>\",
+      \"website\": \"http://www.omm-solutions.de\"
+    }" >> $KIBANA_HOME/plugins/extended_metric/package.json
 
 }
 
