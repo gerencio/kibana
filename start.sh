@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+mkdir -p $KIBANA_HOME/conf
 
 install_plugins() {
 
@@ -29,7 +29,7 @@ if [ -n "$ES_URL" ]; then
 fi
 
 echo "kibana.index: \".kibana\"" >> $KIBANA_HOME/conf/kibana.yml
-echo "kibana.defaultAppId: \"discover\" >> $KIBANA_HOME/conf/kibana.yml
+echo "kibana.defaultAppId: \"discover\"" >> $KIBANA_HOME/conf/kibana.yml
 
 
 
