@@ -8,7 +8,7 @@ install_plugins() {
     for p in $(echo $PLUGINS | awk -v RS=, '{print}')
     do
       echo "Installing the plugin $p"
-      kibana-plugin install $p --batch
+      $KIBANA_HOME/bin/kibana-plugin install $p --batch
     done
   else
     mkdir -p $KIBANA_HOME/plugins
@@ -28,17 +28,17 @@ fix_kibana_version() {
   	}
     }" >> $KIBANA_HOME/plugins/c3_charts/package.json
 
-    rm -f $KIBANA_HOME/plugins/extended_metric/package.json
+    rm -f $KIBANA_HOME/plugins/extended_metric_vis/package.json
     echo "{
       \"name\": \"extended_metric_vis\",
       \"version\": \"0.1.0\",
       \"main\": \"index.js\",
       \"kibana\": {
-        "version": \"$KIBANA_VERSION\"
+        \"version\": \"$KIBANA_VERSION\"
       },
       \"author\": \"Olaf Horstmann <oh@omm-solutions.de>\",
       \"website\": \"http://www.omm-solutions.de\"
-    }" >> $KIBANA_HOME/plugins/extended_metric/package.json
+    }" >> $KIBANA_HOME/plugins/extended_metric_vis/package.json
 
 }
 
