@@ -21,8 +21,8 @@ WORKDIR $KIBANA_HOME
 
 WORKDIR $KIBANA_HOME/plugins
 
-RUN  git clone https://github.com/mstoyano/kbn_c3js_vis.git c3_charts && cd c3_charts && npm install
-RUN  git clone https://github.com/ommsolutions/kibana_ext_metrics_vis extended_metric_vis
+# RUN  git clone https://github.com/mstoyano/kbn_c3js_vis.git c3_charts && cd c3_charts && npm install
+# RUN  git clone https://github.com/ommsolutions/kibana_ext_metrics_vis extended_metric_vis
 
 WORKDIR $KIBANA_HOME
 
