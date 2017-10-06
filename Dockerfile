@@ -2,7 +2,7 @@ FROM openjdk:8u111-jre
 
 MAINTAINER clayton@xdevel.com.br
 
-ENV KIBANA_VERSION 5.1.1
+ENV KIBANA_VERSION 5.6.2
 
 #instalando nodejs
 RUN apt-get update && apt-get install -y  curl git && \
@@ -18,8 +18,6 @@ ENV KIBANA_HOME /opt/kibana-$KIBANA_VERSION-linux-x86_64
 RUN mkdir -p $KIBANA_HOME/plugins
 
 WORKDIR $KIBANA_HOME
-
-RUN  bin/kibana-plugin install x-pack
 
 WORKDIR $KIBANA_HOME/plugins
 
