@@ -1,8 +1,3 @@
-xpack.security.enabled: "true"
-xpack.security.encryptionKey: "KMnrGhQecryNzZksqyDtMeJEHppfmhGt"
-xpack.security.sessionTimeout: 600000
 elasticsearch.url: "http://kibana:safetruck2017@elasticsearch:9200"
 kibana.index: ".kibana"
 kibana.defaultAppId: "discover"
-elasticsearch.username: "kibana"
-elasticsearch.password: "safetruck2017"
